@@ -4,16 +4,16 @@ $(function() {
 
     var favorites = ["color", "food", "animal", "season"];
 
-    favorites.forEach(function(favorite) {
-      var userInput = $("input#" + favorite).val();
-    })
+    var favoritesArray = favorites.map(function(favorite) {
+      return $("input#" + favorite).val();
+    });
 
-    var favoritesArray = [];
+    var specificsArray = [];
 
-    favoritesArray.push(favorites[1], favorites[0], favorites[2]);
-
-    favoritesArray.forEach(function(favorite) {
-      $("ul").append("<li>" + favorite.toUpperCase() + "</li>");
+    specificsArray.push(favoritesArray[1], favoritesArray[0], favoritesArray[2]);
+    
+    specificsArray.forEach(function(specific) {
+      $("ul").append("<li>" + specific.toUpperCase() + "</li>");
     });
   });
 });
